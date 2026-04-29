@@ -218,7 +218,8 @@ __marimo__/
 .streamlit/secrets.toml
 Qwen3.5-4B-MLX-4bit
 Qwen3.5-4B-MLX-8bit
-output.txt
+*.txt
 .vscode
 .build
 .claude
+default.metallib

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Ensure metallib is available
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+"$SCRIPT_DIR/setup-metallib.sh"
+
 SCRIPT="mlx-tool-calling.py"
 
 models=(
@@ -27,8 +31,12 @@ for model in "${models[@]}"; do
   echo "Model: $model"
   echo "========================================"
   for q in "${questions[@]}"; do
-    echo "========== Question: $q =========="
+    echo "========== [Python] Question: $q =========="
     python3 "$SCRIPT" --model "$model" --question "$q"
+    echo ""
+
+    echo "========== [Swift] Question: $q =========="
+    swift run --quiet mlx-tool-calling --model "$model" --question "$q"
     echo ""
   done
   echo ""
