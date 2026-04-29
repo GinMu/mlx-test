@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT="mlx-script.py"
+SCRIPT="mlx-tool-calling.py"
 
 models=(
   "Qwen3.5-4B-MLX-8bit"

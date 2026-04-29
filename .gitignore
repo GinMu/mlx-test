@@ -219,3 +219,6 @@ __marimo__/
 Qwen3.5-4B-MLX-4bit
 Qwen3.5-4B-MLX-8bit
 output.txt
+.vscode
+.build
+.claude
