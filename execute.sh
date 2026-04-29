@@ -2,6 +2,11 @@
 
 SCRIPT="mlx-script.py"
 
+models=(
+  "Qwen3.5-4B-MLX-8bit"
+  "Qwen3.5-4B-MLX-4bit"
+)
+
 questions=(
   "生成钱包"
   "生成一个钱包"
@@ -17,8 +22,14 @@ questions=(
   "what is the date now"
 )
 
-for q in "${questions[@]}"; do
-  echo "========== Question: $q =========="
-  python3 "$SCRIPT" --question "$q"
+for model in "${models[@]}"; do
+  echo "========================================"
+  echo "Model: $model"
+  echo "========================================"
+  for q in "${questions[@]}"; do
+    echo "========== Question: $q =========="
+    python3 "$SCRIPT" --model "$model" --question "$q"
+    echo ""
+  done
   echo ""
 done

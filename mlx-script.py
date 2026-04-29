@@ -41,6 +41,8 @@ tools = {"current_date": current_date, "generate_wallet": generate_wallet}
 # User prompt
 messages = [{"role": "user", "content": args.question}]
 
+log("\n====== New Conversation ======\n")
+log("model:", model_path)
 log("user question:", args.question)
 
 # Step 1: Generate prompt with tools
